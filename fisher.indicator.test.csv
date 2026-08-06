@@ -1,0 +1,97 @@
+func,season,category,carried,noncarried,TOTAL
+Sulfate reduction,1.winter,MP,0,187,187
+Sulfate reduction,1.winter,NP,0,189,189
+Sulfate reduction,2.spring,MP,1,648,649
+Sulfate reduction,2.spring,NP,0,14,14
+Sulfate reduction,3.summer,MP,0,907,907
+Sulfate reduction,3.summer,NP,0,395,395
+Sulfate reduction,4.autumn,MP,1,620,621
+Sulfate reduction,4.autumn,NP,0,59,59
+Sulur oxidation,1.winter,MP,3,184,187
+Sulur oxidation,1.winter,NP,5,184,189
+Sulur oxidation,2.spring,MP,13,636,649
+Sulur oxidation,2.spring,NP,0,14,14
+Sulur oxidation,3.summer,MP,8,899,907
+Sulur oxidation,3.summer,NP,5,390,395
+Sulur oxidation,4.autumn,MP,20,601,621
+Sulur oxidation,4.autumn,NP,1,58,59
+Nitrite ammonification,1.winter,MP,6,181,187
+Nitrite ammonification,1.winter,NP,0,189,189
+Nitrite ammonification,2.spring,MP,11,638,649
+Nitrite ammonification,2.spring,NP,0,14,14
+Nitrite ammonification,3.summer,MP,12,895,907
+Nitrite ammonification,3.summer,NP,10,385,395
+Nitrite ammonification,4.autumn,MP,4,617,621
+Nitrite ammonification,4.autumn,NP,0,59,59
+Denitrification,1.winter,MP,0,187,187
+Denitrification,1.winter,NP,1,188,189
+Denitrification,2.spring,MP,9,640,649
+Denitrification,2.spring,NP,0,14,14
+Denitrification,3.summer,MP,16,891,907
+Denitrification,3.summer,NP,7,388,395
+Denitrification,4.autumn,MP,2,619,621
+Denitrification,4.autumn,NP,0,59,59
+Nitrogen fixation,1.winter,MP,0,187,187
+Nitrogen fixation,1.winter,NP,0,189,189
+Nitrogen fixation,2.spring,MP,0,649,649
+Nitrogen fixation,2.spring,NP,0,14,14
+Nitrogen fixation,3.summer,MP,0,907,907
+Nitrogen fixation,3.summer,NP,3,392,395
+Nitrogen fixation,4.autumn,MP,0,621,621
+Nitrogen fixation,4.autumn,NP,0,59,59
+Fermentation,1.winter,MP,4,183,187
+Fermentation,1.winter,NP,4,185,189
+Fermentation,2.spring,MP,14,635,649
+Fermentation,2.spring,NP,1,13,14
+Fermentation,3.summer,MP,44,863,907
+Fermentation,3.summer,NP,12,383,395
+Fermentation,4.autumn,MP,13,608,621
+Fermentation,4.autumn,NP,0,59,59
+Carbon fixation,1.winter,MP,0,187,187
+Carbon fixation,1.winter,NP,2,187,189
+Carbon fixation,2.spring,MP,3,646,649
+Carbon fixation,2.spring,NP,0,14,14
+Carbon fixation,3.summer,MP,4,903,907
+Carbon fixation,3.summer,NP,1,394,395
+Carbon fixation,4.autumn,MP,4,617,621
+Carbon fixation,4.autumn,NP,0,59,59
+Organic carbon oxidation,1.winter,MP,57,130,187
+Organic carbon oxidation,1.winter,NP,92,97,189
+Organic carbon oxidation,2.spring,MP,282,367,649
+Organic carbon oxidation,2.spring,NP,3,11,14
+Organic carbon oxidation,3.summer,MP,370,537,907
+Organic carbon oxidation,3.summer,NP,81,314,395
+Organic carbon oxidation,4.autumn,MP,259,362,621
+Organic carbon oxidation,4.autumn,NP,1,58,59
+ARG,1.winter,MP,86,101,187
+ARG,1.winter,NP,82,107,189
+ARG,2.spring,MP,310,339,649
+ARG,2.spring,NP,7,7,14
+ARG,3.summer,MP,336,571,907
+ARG,3.summer,NP,107,288,395
+ARG,4.autumn,MP,305,316,621
+ARG,4.autumn,NP,9,50,59
+VF,1.winter,MP,101,86,187
+VF,1.winter,NP,29,160,189
+VF,2.spring,MP,211,438,649
+VF,2.spring,NP,3,11,14
+VF,3.summer,MP,245,662,907
+VF,3.summer,NP,87,308,395
+VF,4.autumn,MP,147,474,621
+VF,4.autumn,NP,1,58,59
+CAZyme,1.winter,MP,58,129,187
+CAZyme,1.winter,NP,57,132,189
+CAZyme,2.spring,MP,325,324,649
+CAZyme,2.spring,NP,6,8,14
+CAZyme,3.summer,MP,353,554,907
+CAZyme,3.summer,NP,118,277,395
+CAZyme,4.autumn,MP,278,343,621
+CAZyme,4.autumn,NP,20,39,59
+PDE,1.winter,MP,56,131,187
+PDE,1.winter,NP,57,132,189
+PDE,2.spring,MP,281,368,649
+PDE,2.spring,NP,1,13,14
+PDE,3.summer,MP,244,663,907
+PDE,3.summer,NP,77,318,395
+PDE,4.autumn,MP,168,453,621
+PDE,4.autumn,NP,2,57,59

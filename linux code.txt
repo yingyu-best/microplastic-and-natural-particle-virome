@@ -1,0 +1,58 @@
+### basic metagenomic processing codes can be found under:
+### https://github.com/yingyu-best/microplastic-and-natural-particle-microbiome/blob/main/Linux%20code/code.txt
+
+### please cite the publications if you found the usefull in your research:
+### [1] Bao, Yingyu; Ho, Yuen-Wa; Shen, Zhiyong; Lam, Edmund Y.; Fang, James K. H.; Leung, Kenneth M. Y.; et al. (2026). Seasonal Divergence between Microbiomes on Microplastics and Natural Particles Increases with Rising Water Temperatures in Urban Rivers. ACS Publications. Collection. https://doi.org/10.1021/acs.est.5c13903
+### [2] Bao Y, Ho YW, Shen Z, Lam EY, Fang JKH, Leung KMY, Lee PKH. Ecological Roles and Shared Microbes Differentiate the Plastisphere from Natural Particle-Associated Microbiomes in Urban Rivers. Environ Sci Technol. 2025 Aug 19;59(32):17298-17309. doi: 10.1021/acs.est.5c06538. Epub 2025 Aug 8. PMID: 40779699; PMCID: PMC12369012.
+
+### identify MGEs and putative phage-plasmids ###
+
+#insertion sequences
+conda install -c bioconda -c conda-forge isescan -y
+isescan.py --seqfile vOTU.fna --output isescan --nthread 16
+
+#conjugation systems
+macsydata install CONJScan
+macsyfinder --db-type ordered_replicon --sequence-db $sample.fa --models CONJScan/Plasmids all -o conj.plasmid.$sample
+
+#phage-plasmids
+follow the well-summerized pipeline of Karina Ilchenko et al, (http://dx.doi.org/10.1128/mbio.03000-25),
+https://github.com/EpfeiferNutri/Phage-plasmids
+
+
+
+#### mapping between virus and host genomes ####
+
+#blastn between viral and bacterial genomes：
+
+makeblastdb -in host_MAG.fna -dbtype nucl
+
+blastn -query virus.fna \
+       -db host_MAG.fna \
+       -outfmt "6 qseqid sseqid pident length qlen slen qstart qend sstart send evalue" \
+       -evalue 1e-5 \
+       -out virus_vs_host.blast
+
+#extract targeted genomes' results
+awk -F '\t' '$1=="A_S37C5056" && $2=="A-TR12I-MP.31_k141_296432_length_5868_cov_45.6356" && $3>=50 && $11 <=1e-5' \
+/trinity/home/yingyubao2/workspace/HKMP/virus.full/host/blast.func/votu_vs_mags.sequence.blastn.tsv \
+> A_S37C5056__A-TR12I-MP.31_k141_296432_length_5868_cov_45.6356.filtered.blast
+
+#change format for R processing
+awk -F '\t' 'BEGIN{OFS="\t"}
+{
+qs=($7<$8)?$7:$8;
+qe=($7<$8)?$8:$7;
+ss=($9<$10)?$9:$10;
+se=($9<$10)?$10:$9;
+print qs, qe, ss, se, $3
+}' A_S37C5056__A-TR12I-MP.31_k141_296432_length_5868_cov_45.6356.filtered.blast > comparison.tsv
+
+
+#extract target gff：
+
+awk -F '\t' '$1=="A_S37C5056"' prodigal.genes.gff > A_S37C5056.gff
+
+awk -F '\t' '$1=="A-TR12I-MP.31_k141_296432_length_5868_cov_45.6356"' mag.genes.gff > A-TR12I-MP.31_k141_296432_length_5868_cov_45.6356.gff
+
+#visualization using "genoPlotR" in R
